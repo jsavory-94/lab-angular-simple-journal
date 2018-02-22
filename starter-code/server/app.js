@@ -22,7 +22,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 const index = require('./routes/index');
+const journal = require('./routes/api/journal-entries');
 app.use('/', index);
+app.use('/', journal);
 
 // -- error handlers
 

@@ -9,7 +9,9 @@ export class JournalEntriesService {
   constructor(private http: Http) { }
 
 getList(): Promise<any> {
-  return this.http.get(`${this.API_URL}`)
+  return this.http.get(`${this.API_URL}/journal-entries`)
+  .toPromise()
+  .then((res:Response) => res.json());
 }
 
 }
